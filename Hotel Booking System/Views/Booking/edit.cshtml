@@ -1,0 +1,36 @@
+﻿@model Hotel_Booking_System.Models.Booking
+
+<h2>Edit Booking</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(m => m.BookingID)
+    @Html.HiddenFor(m => m.RoomID)
+
+    <div>
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Email)
+        @Html.TextBoxFor(m => m.Email)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Phone)
+        @Html.TextBoxFor(m => m.Phone)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.CheckInDate)
+        @Html.TextBoxFor(m => m.CheckInDate, "{0:yyyy-MM-dd}", new { type = "date" })
+    </div>
+    <div>
+        @Html.LabelFor(m => m.CheckOutDate)
+        @Html.TextBoxFor(m => m.CheckOutDate, "{0:yyyy-MM-dd}", new { type = "date" })
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Status)
+        @Html.TextBoxFor(m => m.Status)
+    </div>
+
+    <button type="submit">Update Booking</button>
+}
